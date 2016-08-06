@@ -1,0 +1,29 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Event Resource
+POST    /events/					controllers.EventController.create
+GET		/events/					controllers.EventController.findAll
+GET	    /events/:eventId/           controllers.EventController.findById(eventId: Long)
+
+# Ticket Resource
+POST	/tickets/blocks/			controllers.TicketController.create
+GET		/tickets/blocks/			controllers.TicketController.findAll
+GET     /tickets/blocks/:blockId/   controllers.TicketController.findById(blockId: Long)
+
+# Order Resource
+POST    /orders/                     controllers.OrderController.create
+GET     /orders/                    controllers.OrderController.findAll
+GET     /orders/:orderId             controllers.OrderController.findById(orderId: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
